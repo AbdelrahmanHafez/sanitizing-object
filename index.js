@@ -1,5 +1,5 @@
 const sanitizeObject = ({ object, properties, whitelist, blacklist }) => {
-  if ((!whitelist && !blacklist) || (whitelist && blacklist)) {
+  if (Boolean(whitelist) === Boolean(blacklist)) {
     throw new Error('You have to pick either blacklist or whitelist.');
   }
 
